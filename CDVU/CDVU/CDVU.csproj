@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E83496F2-CCFE-4926-B1DC-C99ADBBBE840}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CDVU</RootNamespace>
+    <AssemblyName>CDVU</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.5\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\Base de Datos\AccesoBD.cs" />
+    <Compile Include="Clases\Base de Datos\GestorClub\GestorDeporte.cs" />
+    <Compile Include="Clases\Base de Datos\GestorClub\GestorEntrenamiento.cs" />
+    <Compile Include="Clases\Base de Datos\GestorClub\GestorInscripcion.cs" />
+    <Compile Include="Clases\Base de Datos\GestorClub\GestorTesoreria.cs" />
+    <Compile Include="Clases\Base de Datos\GestorLocaciones.cs" />
+    <Compile Include="Clases\Base de Datos\GestorPersonas\GestorProfesor.cs" />
+    <Compile Include="Clases\Base de Datos\GestorPersonas\GestorSocio.cs" />
+    <Compile Include="Clases\Base de Datos\GestorPersonas\GestorTutor.cs" />
+    <Compile Include="Clases\Base de Datos\GestorPersonas\GestorUsuario.cs" />
+    <Compile Include="Clases\Club\ClasificacionDeporte.cs" />
+    <Compile Include="Clases\Club\Deporte.cs" />
+    <Compile Include="Clases\Club\DeporteProfesor.cs" />
+    <Compile Include="Clases\Club\Entrenamiento.cs" />
+    <Compile Include="Clases\Personas\Usuario.cs" />
+    <Compile Include="Clases\Tesorería\Inscripcion.cs" />
+    <Compile Include="Clases\Club\TurnoEntrenamiento.cs" />
+    <Compile Include="Clases\Tesorería\Pago.cs" />
+    <Compile Include="Clases\Tesorería\PagoRecibo.cs" />
+    <Compile Include="Clases\Tesorería\Recibo.cs" />
+    <Compile Include="frmConsultaAdministracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaAdministracion.designer.cs">
+      <DependentUpon>frmConsultaAdministracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaRecepcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaRecepcion.designer.cs">
+      <DependentUpon>frmConsultaRecepcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaSocio.designer.cs">
+      <DependentUpon>frmConsultaSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaTesoreria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaTesoreria.designer.cs">
+      <DependentUpon>frmConsultaTesoreria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEntrenamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEntrenamiento.designer.cs">
+      <DependentUpon>frmEntrenamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Club\Predio.cs" />
+    <Compile Include="Clases\Club\Turno.cs" />
+    <Compile Include="Clases\Locaciones\Localidad.cs" />
+    <Compile Include="Clases\Locaciones\Pais.cs" />
+    <Compile Include="Clases\Locaciones\Provincia.cs" />
+    <Compile Include="frmInscripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInscripcion.designer.cs">
+      <DependentUpon>frmInscripcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoUsuario.designer.cs">
+      <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPredio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPredio.designer.cs">
+      <DependentUpon>frmPredio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRestaurar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRestaurar.designer.cs">
+      <DependentUpon>frmRestaurar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTesoreria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTesoreria.designer.cs">
+      <DependentUpon>frmTesoreria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentanaAdministracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentanaAdministracion.designer.cs">
+      <DependentUpon>frmVentanaAdministracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentanaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentanaPrincipal.Designer.cs">
+      <DependentUpon>frmVentanaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Personas\Persona.cs" />
+    <Compile Include="Clases\Personas\Profesor.cs" />
+    <Compile Include="Clases\Personas\Socio.cs" />
+    <Compile Include="Clases\Personas\Tutor.cs" />
+    <Compile Include="frmDeporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeporte.designer.cs">
+      <DependentUpon>frmDeporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicio.Designer.cs">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProfesor.designer.cs">
+      <DependentUpon>frmProfesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSocio.Designer.cs">
+      <DependentUpon>frmSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTutor.designer.cs">
+      <DependentUpon>frmTutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentanaRecepcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentanaRecepcion.designer.cs">
+      <DependentUpon>frmVentanaRecepcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentanaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentanaUsuario.designer.cs">
+      <DependentUpon>frmVentanaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmConsultaAdministracion.resx">
+      <DependentUpon>frmConsultaAdministracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaRecepcion.resx">
+      <DependentUpon>frmConsultaRecepcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaSocio.resx">
+      <DependentUpon>frmConsultaSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaTesoreria.resx">
+      <DependentUpon>frmConsultaTesoreria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEntrenamiento.resx">
+      <DependentUpon>frmEntrenamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInscripcion.resx">
+      <DependentUpon>frmInscripcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoUsuario.resx">
+      <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPredio.resx">
+      <DependentUpon>frmPredio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestaurar.resx">
+      <DependentUpon>frmRestaurar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTesoreria.resx">
+      <DependentUpon>frmTesoreria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentanaAdministracion.resx">
+      <DependentUpon>frmVentanaAdministracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentanaPrincipal.resx">
+      <DependentUpon>frmVentanaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeporte.resx">
+      <DependentUpon>frmDeporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInicio.resx">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProfesor.resx">
+      <DependentUpon>frmProfesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSocio.resx">
+      <DependentUpon>frmSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTutor.resx">
+      <DependentUpon>frmTutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentanaRecepcion.resx">
+      <DependentUpon>frmVentanaRecepcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentanaUsuario.resx">
+      <DependentUpon>frmVentanaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vecinos-unidos1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cerrar-ventana-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-restaurar-ventana-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-maximizar-la-ventana-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-minimizar-la-ventana-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-añadir-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eliminar-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reemplazar-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-aprobación-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-aprobar-y-actualizar-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-no-molestar-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-añadir-64 _osc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-añadir-64 _osc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-aprobación-64 _osc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-aprobar-y-actualizar-64 _osc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eliminar-64 .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-no-molestar-64 _osc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reemplazar-64_osc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-símbolo-vaciar-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-símbolo-vaciar-64_osc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-panel-cerrado-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ventana-abierta-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-panel-cerrado-64_osc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ventana-abierta-64_osc.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
