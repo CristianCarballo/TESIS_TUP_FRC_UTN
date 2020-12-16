@@ -37,3 +37,46 @@ C:\Users\pepa_\Documents\Visual Studio 2019\Projects\CDVU\CDVU\obj\Debug\CDVU.fr
 C:\Users\pepa_\Documents\Visual Studio 2019\Projects\CDVU\CDVU\obj\Debug\CDVU.frmConsultaAdministracion.resources
 C:\Users\pepa_\Documents\Visual Studio 2019\Projects\CDVU\CDVU\obj\Debug\CDVU.frmConsultaRecepcion.resources
 C:\Users\pepa_\Documents\Visual Studio 2019\Projects\CDVU\CDVU\obj\Debug\CDVU.frmConsultaTesoreria.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\bin\Debug\CDVU.exe.config
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\bin\Debug\CDVU.exe
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\bin\Debug\CDVU.pdb
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\bin\Debug\BouncyCastle.Crypto.dll
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\bin\Debug\Common.Logging.Core.dll
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\bin\Debug\Common.Logging.dll
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\bin\Debug\itextsharp.dll
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\bin\Debug\BouncyCastle.Crypto.xml
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\bin\Debug\Common.Logging.pdb
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\bin\Debug\Common.Logging.xml
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\bin\Debug\Common.Logging.Core.pdb
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\bin\Debug\Common.Logging.Core.xml
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\bin\Debug\itextsharp.xml
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.csprojAssemblyReference.cache
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmConsultaAdministracion.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmConsultaRecepcion.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmConsultaSocio.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmConsultaTesoreria.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmEntrenamiento.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmInscripcion.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmNuevoUsuario.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmPredio.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmRestaurar.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmTesoreria.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmVentanaAdministracion.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmVentanaPrincipal.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmDeporte.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmInicio.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmProfesor.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmSocio.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmTutor.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmVentanaRecepcion.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmVentanaUsuario.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.Properties.Resources.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.csproj.GenerateResource.cache
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.csproj.CoreCompileInputs.cache
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.csproj.CopyComplete
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.exe
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.pdb
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\bin\Debug\CDVU.exe.manifest
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\bin\Debug\CDVU.application
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.exe.manifest
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.application

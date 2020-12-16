@@ -159,12 +159,52 @@ namespace CDVU
             cmbInscripcion.Items.Clear();
         }
 
+        private void limpiarInformacion()
+        {
+            lblId.Text = "";
+            lblDeporteSeleccionado.Text = "";
+            lblLunes.Text = "";
+            lblMartes.Text = "";
+            lblMiercoles.Text = "";
+            lblJueves.Text = "";
+            lblViernes.Text = "";
+            lblSabado.Text = "";
+            lblDomingo.Text = "";
+        }
+
         private void btnBuscarSocio_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
                 return;
+            }
+        }
+
+        private void setInformacion(Entrenamiento e)
+        {
+            lblId.Text = Convert.ToString(e.Id);
+            lblDeporteSeleccionado.Text = e.Deporte.ToString();
+        }
+
+        private void setHorarioAlForm(Entrenamiento entrenamiento)
+        {
+            foreach (Turno x in ge.listaTurnoSegunIdEntrenamiento(entrenamiento.Id))
+            {
+                if (x.IdDia == 1)
+                    lblLunes.Text = " de " + x.HoraEntrada.TimeOfDay.ToString() + " hs. a " + x.HoraSalida.TimeOfDay.ToString() + " hs.";
+                if (x.IdDia == 2)
+                    lblMartes.Text = " de " + x.HoraEntrada.TimeOfDay.ToString() + " hs. a " + x.HoraSalida.TimeOfDay.ToString() + " hs.";
+                if (x.IdDia == 3)
+                    lblMiercoles.Text = " de " + x.HoraEntrada.TimeOfDay.ToString() + " hs. a " + x.HoraSalida.TimeOfDay.ToString() + " hs.";
+                if (x.IdDia == 4)
+                    lblJueves.Text = " de " + x.HoraEntrada.TimeOfDay.ToString() + " hs. a " + x.HoraSalida.TimeOfDay.ToString() + " hs.";
+                if (x.IdDia == 5)
+                    lblViernes.Text = " de " + x.HoraEntrada.TimeOfDay.ToString() + " hs. a " + x.HoraSalida.TimeOfDay.ToString() + " hs.";
+                if (x.IdDia == 6)
+                    lblSabado.Text = " de " + x.HoraEntrada.TimeOfDay.ToString() + " hs. a " + x.HoraSalida.TimeOfDay.ToString() + " hs.";
+                if (x.IdDia == 7)
+                    lblDomingo.Text = " de " + x.HoraEntrada.TimeOfDay.ToString() + " hs. a " + x.HoraSalida.TimeOfDay.ToString() + " hs.";
             }
         }
 
@@ -218,6 +258,7 @@ namespace CDVU
                 string consulta = "select e.cantidadCuotas - COUNT(p.id) 'Cantidad de cuotas que debe el socio (No incluye la matrícula)' from Pago p right join Inscripcion i on p.inscripcion = i.id join Entrenamiento e on e.id = i.entrenamiento where i.id = " + inscripcion.Id + " and i.socio = " + inscripcion.Socio.Id + " group by e.cantidadCuotas";
                 dgvResultado.DataSource = bd.buscarBD(consulta);
                 limpiarCampos();
+                limpiarInformacion();
             }
         }
 
@@ -231,6 +272,7 @@ namespace CDVU
                 string consulta = "select i.id 'N° de Inscripción', i.fecha 'Fecha de inscripción', nombreDeporte Deporte, descripcion Predio from vw_listaEntrenamiento e join Inscripcion i on i.entrenamiento = e.idEntrenamiento where estaSaldado = 1 and i.socio = " + socio.Id;
                 dgvResultado.DataSource = bd.buscarBD(consulta);
                 limpiarCampos();
+                limpiarInformacion();
             }
 
         }
@@ -242,6 +284,8 @@ namespace CDVU
             else
             {
                 Entrenamiento entrenamiento = (Entrenamiento)lstEntrenamiento.SelectedItem;
+                setInformacion(entrenamiento);
+                setHorarioAlForm(entrenamiento);
                 string consulta = "select Nombre, Apellido, DNI, Domicilio, Telefono, Email from Inscripcion i join vw_listaSocios s on i.socio = s.id where i.entrenamiento = " + entrenamiento.Id;
                 dgvResultado.DataSource = bd.buscarBD(consulta);
                 limpiarCampos();
