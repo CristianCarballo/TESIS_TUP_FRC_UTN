@@ -546,18 +546,6 @@ namespace CDVU
                 return false;
             }
             else
-            if (txtTelefono.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingrese número de teléfono o celular", "Teléfono", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                return false;
-            }
-            else
-            if (txtEmail.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingrese email", "Email", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                return false;
-            }
-            else
             if (dtpFechaNacimiento.Value >= DateTime.Today)
             {
                 MessageBox.Show("La fecha de nacimiento incorrecta", "Fecha de nacimiento", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);

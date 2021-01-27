@@ -41,17 +41,10 @@ namespace CDVU
         private void frmInscripcion_Load(object sender, EventArgs e)
         {
             cargarDatos();
-            habilitar(false);
         }
 
         private void cargarDatos()
         {
-            lstInscripciones.Update();
-            lstInscripciones.DataSource = gi.listaInscripcion();
-            lstInscripciones.ValueMember = "id";
-            lstInscripciones.DisplayMember = "";
-            lstInscripciones.SelectedIndex = -1;
-
             cmbEntrenamiento.Update();
             cmbEntrenamiento.DataSource = ge.listaEntrenamiento();
             cmbEntrenamiento.ValueMember = "id";
@@ -61,16 +54,6 @@ namespace CDVU
 
         // ************************ VALIDACIONES ************************
 
-        private void btnAgregarInscripcion_MouseHover(object sender, EventArgs e)
-        {
-            toolTip.SetToolTip(btnAgregarInscripcion, "Agregar nuevo predio");
-        }
-
-        private void btnEliminarInscripcion_MouseHover(object sender, EventArgs e)
-        {
-            toolTip.SetToolTip(btnEliminarInscripcion, "Eliminar predio seleccionado");
-        }
-
         private void btnAceptar_MouseHover(object sender, EventArgs e)
         {
             toolTip.SetToolTip(btnAceptar, "Aceptar cambios");
@@ -79,47 +62,6 @@ namespace CDVU
         private void btnCancelar_MouseHover(object sender, EventArgs e)
         {
             toolTip.SetToolTip(btnCancelar, "Cancelar cambios");
-        }
-
-        private void lstInscripciones_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            if (lstInscripciones.Enabled)
-            {
-                if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
-                {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(209, 129, 5)), new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
-                    e.Graphics.DrawString(lstInscripciones.Items[e.Index].ToString(), e.Font, Brushes.White, new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
-                }
-                else
-                {
-                    e.DrawBackground();
-                    if (e.Index >= 0)
-                    {
-                        e.Graphics.DrawString(lstInscripciones.Items[e.Index].ToString(), e.Font, Brushes.White, new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
-                    }
-                }
-                e.DrawFocusRectangle();
-            }
-            else
-            {
-                if (lstInscripciones.Enabled)
-                {
-                    if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
-                    {
-                        e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(209, 129, 5)), new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
-                        e.Graphics.DrawString(lstInscripciones.Items[e.Index].ToString(), e.Font, Brushes.Black, new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
-                    }
-                    else
-                    {
-                        e.DrawBackground();
-                        if (e.Index >= 0)
-                        {
-                            e.Graphics.DrawString(lstInscripciones.Items[e.Index].ToString(), e.Font, Brushes.Black, new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
-                        }
-                    }
-                    e.DrawFocusRectangle();
-                }
-            }
         }
 
         private void lstProfesores_DrawItem(object sender, DrawItemEventArgs e)
@@ -195,7 +137,6 @@ namespace CDVU
 
         private void limpiarCampos()
         {
-            lstInscripciones.SelectedIndex = -1;
             txtBuscarSocio.Text = "";
             lblIdSocioSeleccionado.Text = "";
             lblDniSocioSeleccionado.Text = "";
@@ -221,11 +162,6 @@ namespace CDVU
                 inscripcion.Entrenamiento = (Entrenamiento)cmbEntrenamiento.SelectedItem;
                 inscripcion.Fecha = DateTime.Today;
             }
-            //else if (miAccion == Acciones.modificar)
-            //{
-            //}
-            else
-                inscripcion = (Inscripcion)lstInscripciones.SelectedItem;
             return inscripcion;
         }
 
@@ -247,37 +183,6 @@ namespace CDVU
             }
         }
 
-        private void habilitar(bool x)
-        {
-            btnAgregarInscripcion.Enabled = !x;
-            btnEliminarInscripcion.Enabled = !x;
-            lstInscripciones.Enabled = !x;
-            grpSocio.Enabled = x;
-            grpEntrenamiento.Enabled = x;
-            btnAceptar.Enabled = x;
-            btnCancelar.Enabled = x;
-
-            if (btnAceptar.Enabled)
-                btnAceptar.BackgroundImage = CDVU.Properties.Resources.icons8_aprobación_64;
-            else
-                btnAceptar.BackgroundImage = CDVU.Properties.Resources.icons8_aprobación_64__osc;
-
-            if (btnCancelar.Enabled)
-                btnCancelar.BackgroundImage = CDVU.Properties.Resources.icons8_no_molestar_64;
-            else
-                btnCancelar.BackgroundImage = CDVU.Properties.Resources.icons8_no_molestar_64__osc;
-
-            if (btnAgregarInscripcion.Enabled)
-                btnAgregarInscripcion.BackgroundImage = CDVU.Properties.Resources.icons8_añadir_64;
-            else
-                btnAgregarInscripcion.BackgroundImage = CDVU.Properties.Resources.icons8_añadir_64__osc1;
-
-            if (btnEliminarInscripcion.Enabled)
-                btnEliminarInscripcion.BackgroundImage = CDVU.Properties.Resources.icons8_eliminar_64;
-            else
-                btnEliminarInscripcion.BackgroundImage = CDVU.Properties.Resources.icons8_eliminar_64_;
-        }
-
         private bool validarVacios()
         {
             if (txtBuscarSocio.Text.Trim() == "")
@@ -293,16 +198,6 @@ namespace CDVU
             }
             else
                 return true;
-        }
-
-        private bool validarSeleccionLista()
-        {
-            if (lstInscripciones.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe seleccionar una inscripción de la lista para continuar", "Seleccione una inscripción", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                return false;
-            } else
-            return true;
         }
 
         private void generarPDF(Inscripcion i)
@@ -683,25 +578,6 @@ namespace CDVU
         }
 
         // ************************ BOTONES ************************
-
-        private void btnAgregarInscripcion_Click(object sender, EventArgs e)
-        {
-            miAccion = Acciones.agregar;
-            habilitar(true);
-            lstInscripciones.SelectedIndex = -1;
-        }
-
-        private void btnEliminarInscripcion_Click(object sender, EventArgs e)
-        {
-            if (validarSeleccionLista() && MessageBox.Show("¿Seguro que quiere eliminar?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                miAccion = Acciones.eliminar;
-                abmInscripcion(miAccion);
-                cargarDatos();
-                limpiarCampos();
-                habilitar(false);
-            }
-        }
                 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -710,7 +586,6 @@ namespace CDVU
                 abmInscripcion(miAccion);
                 cargarDatos();
                 limpiarCampos();
-                habilitar(false);
                 generarPDF(gi.ultimaInscripcionGenerada());
             }
         }
@@ -720,7 +595,6 @@ namespace CDVU
             if (MessageBox.Show("¿Seguro que quiere cancelar? \n No se guardarán los cambios", "Cancelando", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 limpiarCampos();
-                habilitar(false);
             }
         }
 

@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnInscripcion = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlContenedor.SuspendLayout();
             this.SuspendLayout();
@@ -41,6 +43,8 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.Black;
+            this.pnlMenu.Controls.Add(this.panel2);
+            this.pnlMenu.Controls.Add(this.btnInscripcion);
             this.pnlMenu.Controls.Add(this.panel1);
             this.pnlMenu.Controls.Add(this.btnSocio);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -109,6 +113,31 @@
             this.lblTitulo.TabIndex = 41;
             this.lblTitulo.Text = "CONSULTAS";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
+            this.panel2.Location = new System.Drawing.Point(0, 337);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 21);
+            this.panel2.TabIndex = 6;
+            // 
+            // btnInscripcion
+            // 
+            this.btnInscripcion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInscripcion.FlatAppearance.BorderSize = 0;
+            this.btnInscripcion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
+            this.btnInscripcion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
+            this.btnInscripcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInscripcion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInscripcion.ForeColor = System.Drawing.Color.White;
+            this.btnInscripcion.Location = new System.Drawing.Point(3, 337);
+            this.btnInscripcion.Name = "btnInscripcion";
+            this.btnInscripcion.Size = new System.Drawing.Size(217, 21);
+            this.btnInscripcion.TabIndex = 7;
+            this.btnInscripcion.Text = "INSCRIPCION";
+            this.btnInscripcion.UseVisualStyleBackColor = true;
+            this.btnInscripcion.Click += new System.EventHandler(this.btnInscripcion_Click);
+            // 
             // frmConsultaRecepcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
@@ -136,5 +165,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlContenedor;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnInscripcion;
     }
 }

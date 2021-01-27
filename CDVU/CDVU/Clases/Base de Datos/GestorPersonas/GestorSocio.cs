@@ -99,6 +99,48 @@ namespace CDVU.Clases.Base_de_Datos
             return lista;
         }
 
+        public List<Socio> listaSociosInscriptos(int idEntrenamiento)
+        {
+            List<Socio> lista = new List<Socio>();
+            bd.consultarBD("select * from vw_listaSocios s join Inscripcion i on s.id = i.socio join Entrenamiento e on e.id = i.entrenamiento where e.id = " + idEntrenamiento);
+            while (bd.Lector.Read())
+            {
+                Socio socio = new Socio();
+                if (!bd.Lector.IsDBNull(0))
+                    socio.Id = bd.Lector.GetInt32(0);
+                if (!bd.Lector.IsDBNull(1))
+                    socio.Nombre = bd.Lector.GetString(1);
+                if (!bd.Lector.IsDBNull(2))
+                    socio.Apellido = bd.Lector.GetString(2);
+                if (!bd.Lector.IsDBNull(3))
+                    socio.IdSexo = bd.Lector.GetInt32(3);
+                if (!bd.Lector.IsDBNull(4))
+                    socio.Sexo = bd.Lector.GetString(4);
+                if (!bd.Lector.IsDBNull(5))
+                    socio.Dni = bd.Lector.GetString(5);
+                if (!bd.Lector.IsDBNull(6))
+                    socio.Domicilio = bd.Lector.GetString(6);
+                if (!bd.Lector.IsDBNull(7))
+                    socio.Localidad = new Localidad(bd.Lector.GetInt32(7), bd.Lector.GetString(8), new Provincia(bd.Lector.GetInt32(9), bd.Lector.GetString(10)));
+                if (!bd.Lector.IsDBNull(11))
+                    socio.Telefono = bd.Lector.GetString(11);
+                if (!bd.Lector.IsDBNull(12))
+                    socio.Email = bd.Lector.GetString(12);
+                if (!bd.Lector.IsDBNull(13))
+                    socio.FechaNacimiento = bd.Lector.GetDateTime(13);
+                if (!bd.Lector.IsDBNull(14))
+                    socio.Nacionalidad = new Pais(bd.Lector.GetInt32(14), bd.Lector.GetString(15));
+                if (!bd.Lector.IsDBNull(16))
+                    socio.Tutor = new Tutor(bd.Lector.GetInt32(16), bd.Lector.GetString(17), bd.Lector.GetString(18), bd.Lector.GetInt32(19), bd.Lector.GetString(20), bd.Lector.GetString(21), bd.Lector.GetString(22), new Localidad(bd.Lector.GetInt32(23), bd.Lector.GetString(8), new Provincia(bd.Lector.GetInt32(9), bd.Lector.GetString(10))), bd.Lector.GetString(24), bd.Lector.GetString(25), bd.Lector.GetDateTime(26), new Pais(bd.Lector.GetInt32(27), bd.Lector.GetString(15)));
+                else
+                    socio.Tutor = null;
+                lista.Add(socio);
+            }
+            bd.Lector.Close();
+            bd.desconectar();
+            return lista;
+        }
+
         public Socio obtenerSocioPorDNI(string dni)
         {
             Socio socio = new Socio();
@@ -199,7 +241,7 @@ namespace CDVU.Clases.Base_de_Datos
                 bd.Comando.Parameters.Add(new SqlParameter("@fechaNacimiento", s.FechaNacimiento));
                 bd.Comando.Parameters.Add(new SqlParameter("@nacionalidad", s.Nacionalidad.Id));
                 if (s.Tutor == null)
-                    bd.Comando.Parameters.Add(new SqlParameter("@tutor", null));
+                    bd.Comando.Parameters.Add(new SqlParameter("@tutor", DBNull.Value));
                 else
                     bd.Comando.Parameters.Add(new SqlParameter("@tutor", s.Tutor.Id));
                 bd.Comando.ExecuteNonQuery();
@@ -229,7 +271,7 @@ namespace CDVU.Clases.Base_de_Datos
                 bd.Comando.Parameters.Add(new SqlParameter("@fechaNacimiento", s.FechaNacimiento));
                 bd.Comando.Parameters.Add(new SqlParameter("@nacionalidad", s.Nacionalidad.Id));
                 if (s.Tutor == null)
-                    bd.Comando.Parameters.Add(new SqlParameter("@tutor", null));
+                    bd.Comando.Parameters.Add(new SqlParameter("@tutor", DBNull.Value));
                 else
                     bd.Comando.Parameters.Add(new SqlParameter("@tutor", s.Tutor.Id));
                 bd.Comando.Parameters.Add(new SqlParameter("@id", s.Id));

@@ -400,7 +400,7 @@ namespace CDVU
             if (chkMartes.Checked == false)
             {
                 dtpHoraEntradaMartes.Enabled = dtpHoraSalidaMartes.Enabled = false;
-                lblMiercoles.Text = "";
+                lblMartes.Text = "";
             }
         }
 

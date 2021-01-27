@@ -25,5 +25,10 @@ namespace CDVU
         {
             abrirForm(new frmConsultaSocio());
         }
+
+        private void btnInscripcion_Click(object sender, EventArgs e)
+        {
+            abrirForm(new frmConsultaInscripcion());
+        }
     }
 }

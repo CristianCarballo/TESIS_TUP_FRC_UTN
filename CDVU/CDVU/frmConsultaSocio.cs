@@ -31,7 +31,6 @@ namespace CDVU
         private void frmConsultaSocio_Load(object sender, EventArgs e)
         {
             cargarListaSocio();
-            cargarListaEntrenamiento();
         }
 
         private void cargarListaSocio()
@@ -41,15 +40,6 @@ namespace CDVU
             lstSocios.ValueMember = "id";
             lstSocios.DisplayMember = "";
             lstSocios.SelectedIndex = -1;
-        }
-
-        private void cargarListaEntrenamiento()
-        {
-            lstEntrenamiento.Update();
-            lstEntrenamiento.DataSource = ge.listaEntrenamiento();
-            lstEntrenamiento.ValueMember = "id";
-            lstEntrenamiento.DisplayMember = "";
-            lstEntrenamiento.SelectedIndex = -1;
         }
 
         private void cargarComboInscripcion(int idSocio)
@@ -73,7 +63,6 @@ namespace CDVU
             cargarComboInscripcion(socio.Id);
         }
 
-       
         // ************************ VALIDACIONES ************************
 
         private void lstSocios_DrawItem(object sender, DrawItemEventArgs e)
@@ -114,62 +103,11 @@ namespace CDVU
             }
         }
 
-        private void lstEntrenamiento_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            if (lstEntrenamiento.Enabled)
-            {
-                if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
-                {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(209, 129, 5)), new Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
-                    e.Graphics.DrawString(lstEntrenamiento.Items[e.Index].ToString(), e.Font, Brushes.White, new Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
-                }
-                else
-                {
-                    e.DrawBackground();
-                    if (e.Index >= 0)
-                    {
-                        e.Graphics.DrawString(lstEntrenamiento.Items[e.Index].ToString(), e.Font, Brushes.White, new Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
-                    }
-                }
-                e.DrawFocusRectangle();
-            }
-            else
-            {
-                if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
-                {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(209, 129, 5)), new Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
-                    e.Graphics.DrawString(lstEntrenamiento.Items[e.Index].ToString(), e.Font, Brushes.Black, new Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
-                }
-                else
-                {
-                    e.DrawBackground();
-                    if (e.Index >= 0)
-                    {
-                        e.Graphics.DrawString(lstEntrenamiento.Items[e.Index].ToString(), e.Font, Brushes.Black, new Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
-                    }
-                }
-                e.DrawFocusRectangle();
-            }
-        }
-
         private void limpiarCampos()
         {
             txtBuscarSocio.Text = "";
             cmbInscripcion.DataSource = null;
             cmbInscripcion.Items.Clear();
-        }
-
-        private void limpiarInformacion()
-        {
-            lblId.Text = "";
-            lblDeporteSeleccionado.Text = "";
-            lblLunes.Text = "";
-            lblMartes.Text = "";
-            lblMiercoles.Text = "";
-            lblJueves.Text = "";
-            lblViernes.Text = "";
-            lblSabado.Text = "";
-            lblDomingo.Text = "";
         }
 
         private void btnBuscarSocio_KeyPress(object sender, KeyPressEventArgs e)
@@ -178,33 +116,6 @@ namespace CDVU
             {
                 e.Handled = true;
                 return;
-            }
-        }
-
-        private void setInformacion(Entrenamiento e)
-        {
-            lblId.Text = Convert.ToString(e.Id);
-            lblDeporteSeleccionado.Text = e.Deporte.ToString();
-        }
-
-        private void setHorarioAlForm(Entrenamiento entrenamiento)
-        {
-            foreach (Turno x in ge.listaTurnoSegunIdEntrenamiento(entrenamiento.Id))
-            {
-                if (x.IdDia == 1)
-                    lblLunes.Text = " de " + x.HoraEntrada.TimeOfDay.ToString() + " hs. a " + x.HoraSalida.TimeOfDay.ToString() + " hs.";
-                if (x.IdDia == 2)
-                    lblMartes.Text = " de " + x.HoraEntrada.TimeOfDay.ToString() + " hs. a " + x.HoraSalida.TimeOfDay.ToString() + " hs.";
-                if (x.IdDia == 3)
-                    lblMiercoles.Text = " de " + x.HoraEntrada.TimeOfDay.ToString() + " hs. a " + x.HoraSalida.TimeOfDay.ToString() + " hs.";
-                if (x.IdDia == 4)
-                    lblJueves.Text = " de " + x.HoraEntrada.TimeOfDay.ToString() + " hs. a " + x.HoraSalida.TimeOfDay.ToString() + " hs.";
-                if (x.IdDia == 5)
-                    lblViernes.Text = " de " + x.HoraEntrada.TimeOfDay.ToString() + " hs. a " + x.HoraSalida.TimeOfDay.ToString() + " hs.";
-                if (x.IdDia == 6)
-                    lblSabado.Text = " de " + x.HoraEntrada.TimeOfDay.ToString() + " hs. a " + x.HoraSalida.TimeOfDay.ToString() + " hs.";
-                if (x.IdDia == 7)
-                    lblDomingo.Text = " de " + x.HoraEntrada.TimeOfDay.ToString() + " hs. a " + x.HoraSalida.TimeOfDay.ToString() + " hs.";
             }
         }
 
@@ -258,7 +169,6 @@ namespace CDVU
                 string consulta = "select e.cantidadCuotas - COUNT(p.id) 'Cantidad de cuotas que debe el socio (No incluye la matrícula)' from Pago p right join Inscripcion i on p.inscripcion = i.id join Entrenamiento e on e.id = i.entrenamiento where i.id = " + inscripcion.Id + " and i.socio = " + inscripcion.Socio.Id + " group by e.cantidadCuotas";
                 dgvResultado.DataSource = bd.buscarBD(consulta);
                 limpiarCampos();
-                limpiarInformacion();
             }
         }
 
@@ -270,23 +180,6 @@ namespace CDVU
             {
                 socio = (Socio)lstSocios.SelectedItem;
                 string consulta = "select i.id 'N° de Inscripción', i.fecha 'Fecha de inscripción', nombreDeporte Deporte, descripcion Predio from vw_listaEntrenamiento e join Inscripcion i on i.entrenamiento = e.idEntrenamiento where estaSaldado = 1 and i.socio = " + socio.Id;
-                dgvResultado.DataSource = bd.buscarBD(consulta);
-                limpiarCampos();
-                limpiarInformacion();
-            }
-
-        }
-
-        private void btnListadoSociosInscriptos_Click(object sender, EventArgs e)
-        {
-            if (lstEntrenamiento.SelectedIndex == -1)
-                MessageBox.Show("Debe seleccionar un entrenamiento de la lista para continuar", "Seleccione un entrenamiento", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-            else
-            {
-                Entrenamiento entrenamiento = (Entrenamiento)lstEntrenamiento.SelectedItem;
-                setInformacion(entrenamiento);
-                setHorarioAlForm(entrenamiento);
-                string consulta = "select Nombre, Apellido, DNI, Domicilio, Telefono, Email from Inscripcion i join vw_listaSocios s on i.socio = s.id where i.entrenamiento = " + entrenamiento.Id;
                 dgvResultado.DataSource = bd.buscarBD(consulta);
                 limpiarCampos();
             }

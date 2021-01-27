@@ -118,6 +118,12 @@
     <Compile Include="frmConsultaAdministracion.designer.cs">
       <DependentUpon>frmConsultaAdministracion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConsultaInscripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaInscripcion.designer.cs">
+      <DependentUpon>frmConsultaInscripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConsultaRecepcion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmConsultaAdministracion.resx">
       <DependentUpon>frmConsultaAdministracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaInscripcion.resx">
+      <DependentUpon>frmConsultaInscripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultaRecepcion.resx">
       <DependentUpon>frmConsultaRecepcion.cs</DependentUpon>
@@ -406,7 +415,6 @@
   <ItemGroup>
     <Content Include="Icon1.ico" />
     <None Include="Resources\logo.bmp" />
-    <Content Include="vecinosunidoslogo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -118,6 +118,7 @@ namespace CDVU
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.chkPrecioMatricula = new System.Windows.Forms.CheckBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.grpCombos.SuspendLayout();
             this.grpHorario.SuspendLayout();
             this.grpInformacion.SuspendLayout();
@@ -811,6 +812,7 @@ namespace CDVU
             // 
             // grpInformacion
             // 
+            this.grpInformacion.Controls.Add(this.label25);
             this.grpInformacion.Controls.Add(this.label24);
             this.grpInformacion.Controls.Add(this.label23);
             this.grpInformacion.Controls.Add(this.label22);
@@ -1396,6 +1398,18 @@ namespace CDVU
             this.chkPrecioMatricula.UseVisualStyleBackColor = true;
             this.chkPrecioMatricula.CheckedChanged += new System.EventHandler(this.chkPrecioMatricula_CheckedChanged);
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(185, 678);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(168, 16);
+            this.label25.TabIndex = 59;
+            this.label25.Text = "(no incluye la matrícula)";
+            // 
             // frmEntrenamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
@@ -1521,5 +1535,6 @@ namespace CDVU
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label25;
     }
 }

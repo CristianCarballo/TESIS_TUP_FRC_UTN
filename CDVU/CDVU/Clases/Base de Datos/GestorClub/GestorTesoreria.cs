@@ -354,6 +354,7 @@ namespace CDVU.Clases.Base_de_Datos.GestorClub
                 bd.Comando.Parameters.AddWithValue("@idSocio", pg.Recibo.Socio.Id);
                 bd.Comando.Parameters.AddWithValue("@montoTotal", pg.Recibo.MontoTotal);
                 pg.Recibo.Id = Convert.ToInt32(bd.Comando.ExecuteScalar());
+                Pago pago = new Pago();
                 foreach (Pago p in pg.ListaPago)
                 {
                     bd.Comando.CommandText = "insert into Pago values(@idInscripcion, @descripcion, @numCuota, @montoCuota); select SCOPE_IDENTITY()";
@@ -370,8 +371,19 @@ namespace CDVU.Clases.Base_de_Datos.GestorClub
                     bd.Comando.Parameters.AddWithValue("@idPago", p.Id);
                     bd.Comando.Parameters.AddWithValue("@idRecibo", pg.Recibo.Id);
                     bd.Comando.ExecuteNonQuery();
+                    pago = p;
                 }
                 bd.Comando.Transaction.Commit();
+                bd.desconectar();
+
+                int cantidadCuotasPagadas = cantidadPagados(pago);
+                int cantidadCuotasEntrenamiento = cantidadReales(pago);
+
+                if (cantidadCuotasEntrenamiento == cantidadCuotasPagadas)
+                {
+                    bd.actualizarBD("update Inscripcion set estaSaldado = 1 where id = " + pago.Inscripcion.Id);
+                    bd.Comando.ExecuteNonQuery();
+                }
                 return true;
             }
             catch (Exception ex)
@@ -384,6 +396,39 @@ namespace CDVU.Clases.Base_de_Datos.GestorClub
             {
                 bd.desconectar();
             }
+        }
+
+        private int cantidadPagados(Pago p)
+        {
+            int c = 0;
+            bd.consultarBD("select count(id) from Pago where inscripcion = " + p.Inscripcion.Id);
+            while (bd.Lector.Read())
+            {
+                if (!bd.Lector.IsDBNull(0))
+                    c = bd.Lector.GetInt32(0);
+            }
+            bd.Lector.Close();
+            bd.desconectar();
+            return c;
+        }
+
+        private int cantidadReales(Pago p)
+        {
+            double precio = 0;
+            int c = 0;
+            bd.consultarBD("select precioMatricula, cantidadCuotas from Entrenamiento e join Inscripcion i on i.entrenamiento = e.id join Pago p on p.inscripcion = i.id where p.id = " + p.Id);
+            if (bd.Lector.Read())
+            {
+                if (!bd.Lector.IsDBNull(0))
+                    precio = bd.Lector.GetDouble(0);
+                if (!bd.Lector.IsDBNull(1))
+                    c = bd.Lector.GetInt32(1);
+                if (precio > 0)
+                    c++;
+            }
+            bd.Lector.Close();
+            bd.desconectar();
+            return c;
         }
     }
 }
