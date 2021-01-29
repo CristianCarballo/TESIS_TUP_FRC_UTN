@@ -71,7 +71,7 @@ namespace CDVU
             {
                 if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
                 {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(209, 129, 5)), new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
+                    e.Graphics.FillRectangle(new SolidBrush(Color.DimGray), new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
                     e.Graphics.DrawString(lstCuotaDeuda.Items[e.Index].ToString(), e.Font, Brushes.White, new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
                 }
                 else
@@ -90,7 +90,7 @@ namespace CDVU
                 {
                     if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
                     {
-                        e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(209, 129, 5)), new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
+                        e.Graphics.FillRectangle(new SolidBrush(Color.DimGray), new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
                         e.Graphics.DrawString(lstCuotaDeuda.Items[e.Index].ToString(), e.Font, Brushes.Black, new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
                     }
                     else
@@ -112,7 +112,7 @@ namespace CDVU
             {
                 if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
                 {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(209, 129, 5)), new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
+                    e.Graphics.FillRectangle(new SolidBrush(Color.DimGray), new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
                     e.Graphics.DrawString(lstCuotaAPagar.Items[e.Index].ToString(), e.Font, Brushes.White, new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
                 }
                 else
@@ -129,7 +129,7 @@ namespace CDVU
             {
                 if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
                 {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(209, 129, 5)), new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
+                    e.Graphics.FillRectangle(new SolidBrush(Color.DimGray), new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
                     e.Graphics.DrawString(lstCuotaAPagar.Items[e.Index].ToString(), e.Font, Brushes.Black, new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
                 }
                 else
@@ -178,7 +178,13 @@ namespace CDVU
                 lblPrecioMensualSeleccionado.Text = "";
                 lblPrecioMatSeleccionado.Text = "";
                 lblCantidadCuotas.Text = "";
+                txtTotal.Text = "";
+                lstCuotaDeuda.Update();
                 lstCuotaDeuda.DataSource = null;
+                lstCuotaDeuda.Items.Clear();
+                lstCuotaAPagar.Update();
+                lstCuotaAPagar.DataSource = null;
+                lstCuotaAPagar.Items.Clear();
             }
             else
             {
@@ -191,6 +197,10 @@ namespace CDVU
                 lstCuotaDeuda.DataSource = gt.listaCuotaSinPagarPorIdInscripcion(i.Id);
                 lstCuotaDeuda.ValueMember = "id";
                 lstCuotaDeuda.DisplayMember = "";
+                if (lstCuotaDeuda.Items.Count > 0)
+                {
+                    lstCuotaDeuda.SelectedIndex = 0;
+                }
             }
         }
 
@@ -273,22 +283,6 @@ namespace CDVU
             //    else
             //        MessageBox.Show("Inscripción eliminado correctamente");
             //}
-        }
-
-        private void habilitar(bool x)
-        {
-            btnAceptar.Enabled = x;
-            btnCancelar.Enabled = x;
-
-            if (btnAceptar.Enabled)
-                btnAceptar.BackgroundImage = CDVU.Properties.Resources.icons8_aprobación_64;
-            else
-                btnAceptar.BackgroundImage = CDVU.Properties.Resources.icons8_aprobación_64__osc;
-
-            if (btnCancelar.Enabled)
-                btnCancelar.BackgroundImage = CDVU.Properties.Resources.icons8_no_molestar_64;
-            else
-                btnCancelar.BackgroundImage = CDVU.Properties.Resources.icons8_no_molestar_64__osc;
         }
 
         private bool validarVacios()
@@ -684,12 +678,6 @@ namespace CDVU
 
         // ************************ BOTONES ************************
 
-        private void btnAgregarRecibo_Click(object sender, EventArgs e)
-        {
-            miAccion = Acciones.agregar;
-            habilitar(true);
-        }
-
         private void btnBuscarSocio_Click(object sender, EventArgs e)
         {
             if (txtBuscarSocio.Text.Trim() == "")
@@ -706,8 +694,6 @@ namespace CDVU
                     {
                         MessageBox.Show("No se encuentra el socio");
                         limpiarCampos();
-                        cmbInscripcion.DataSource = null;
-                        cmbInscripcion.Items.Clear();
                     }
 
                     else
@@ -746,6 +732,7 @@ namespace CDVU
                         lblDniTutorSeleccionado.Text = s.Tutor.Dni;
                         lblNombreTutorSeleccionado.Text = s.Tutor.Apellido + " " + s.Tutor.Nombre;
                     }
+
                     cargarComboInscripcion(s.Id);
                 }
             }
@@ -770,20 +757,30 @@ namespace CDVU
         {
             if (lstCuotaDeuda.SelectedIndex == -1)
             {
-                MessageBox.Show("Seleccione la cuota que desea agregar a la lista de pago", "Cuota", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No hay mas cuotas para agregar", "Cuota", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
+            {
                 moverItem(lstCuotaDeuda, lstCuotaAPagar);
+                if (lstCuotaDeuda.Items.Count > 0)
+                    lstCuotaDeuda.SelectedIndex = 0;
+                lstCuotaAPagar.SelectedIndex = lstCuotaAPagar.Items.Count - 1;
+            }
         }
 
         private void btnQuitarPago_Click(object sender, EventArgs e)
         {
             if (lstCuotaAPagar.SelectedIndex == -1)
             {
-                MessageBox.Show("Seleccione la cuota que desea quitar de la lista de pago", "Cuota", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No hay mas cuotas para quitar", "Cuota", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
+            {
                 moverItem(lstCuotaAPagar, lstCuotaDeuda);
+                if (lstCuotaAPagar.Items.Count > 0)
+                    lstCuotaDeuda.SelectedIndex = 0;
+                lstCuotaAPagar.SelectedIndex = lstCuotaAPagar.Items.Count - 1;
+            }
         }
     }
 }

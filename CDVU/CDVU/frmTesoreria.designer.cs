@@ -30,10 +30,13 @@
         {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.grpPago = new System.Windows.Forms.GroupBox();
+            this.lblControle = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.grpInscripcion = new System.Windows.Forms.GroupBox();
@@ -45,10 +48,16 @@
             this.lblPrecioMatSeleccionado = new System.Windows.Forms.Label();
             this.lblPrecioMatri = new System.Windows.Forms.Label();
             this.lblCantCuotas = new System.Windows.Forms.Label();
+            this.btnQuitarPago = new System.Windows.Forms.Button();
             this.label = new System.Windows.Forms.Label();
+            this.btnAgregarPago = new System.Windows.Forms.Button();
             this.lblPrecioMensual = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblDeporteSeleccionado = new System.Windows.Forms.Label();
+            this.lstCuotaDeuda = new System.Windows.Forms.ListBox();
+            this.lstCuotaAPagar = new System.Windows.Forms.ListBox();
             this.grpSocio = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblNombreTutor = new System.Windows.Forms.Label();
@@ -64,15 +73,6 @@
             this.lblDniSocio = new System.Windows.Forms.Label();
             this.lblIdSocioSeleccionado = new System.Windows.Forms.Label();
             this.lblDniSocioSeleccionado = new System.Windows.Forms.Label();
-            this.btnQuitarPago = new System.Windows.Forms.Button();
-            this.btnAgregarPago = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lstCuotaDeuda = new System.Windows.Forms.ListBox();
-            this.lstCuotaAPagar = new System.Windows.Forms.ListBox();
-            this.lblControle = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.grpPago.SuspendLayout();
             this.grpInscripcion.SuspendLayout();
             this.grpSocio.SuspendLayout();
@@ -111,13 +111,25 @@
             this.grpPago.TabStop = false;
             this.grpPago.Text = "Pago de cuota";
             // 
+            // lblControle
+            // 
+            this.lblControle.AutoSize = true;
+            this.lblControle.Font = new System.Drawing.Font("Verdana", 10F);
+            this.lblControle.ForeColor = System.Drawing.Color.White;
+            this.lblControle.Location = new System.Drawing.Point(50, 162);
+            this.lblControle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblControle.Name = "lblControle";
+            this.lblControle.Size = new System.Drawing.Size(465, 17);
+            this.lblControle.TabIndex = 44;
+            this.lblControle.Text = "Por favor corrobore los datos antes de dar por finalizado el pago";
+            // 
             // txtTotal
             // 
             this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotal.Cursor = System.Windows.Forms.Cursors.No;
             this.txtTotal.ForeColor = System.Drawing.Color.White;
-            this.txtTotal.Location = new System.Drawing.Point(205, 108);
+            this.txtTotal.Location = new System.Drawing.Point(278, 108);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
@@ -129,7 +141,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(58, 110);
+            this.label8.Location = new System.Drawing.Point(131, 110);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(145, 18);
@@ -142,7 +154,7 @@
             this.txtFecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFecha.Cursor = System.Windows.Forms.Cursors.No;
             this.txtFecha.ForeColor = System.Drawing.Color.White;
-            this.txtFecha.Location = new System.Drawing.Point(205, 40);
+            this.txtFecha.Location = new System.Drawing.Point(278, 40);
             this.txtFecha.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.ReadOnly = true;
@@ -154,12 +166,52 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(119, 42);
+            this.label6.Location = new System.Drawing.Point(192, 42);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 18);
             this.label6.TabIndex = 40;
             this.label6.Text = "Fecha:";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.DimGray;
+            this.btnCancelar.BackgroundImage = global::CDVU.Properties.Resources.icons8_no_molestar_64;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Location = new System.Drawing.Point(294, 193);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(69, 70);
+            this.btnCancelar.TabIndex = 43;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCancelar.MouseHover += new System.EventHandler(this.btnCancelar_MouseHover);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.DimGray;
+            this.btnAceptar.BackgroundImage = global::CDVU.Properties.Resources.icons8_aprobación_64;
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Location = new System.Drawing.Point(199, 193);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(69, 70);
+            this.btnAceptar.TabIndex = 42;
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.btnAceptar.MouseHover += new System.EventHandler(this.btnAceptar_MouseHover);
             // 
             // txtNombre
             // 
@@ -167,7 +219,7 @@
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.No;
             this.txtNombre.ForeColor = System.Drawing.Color.White;
-            this.txtNombre.Location = new System.Drawing.Point(205, 74);
+            this.txtNombre.Location = new System.Drawing.Point(278, 74);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
@@ -179,7 +231,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(62, 76);
+            this.label5.Location = new System.Drawing.Point(135, 76);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 18);
@@ -196,7 +248,6 @@
             this.grpInscripcion.Controls.Add(this.lblPrecioMatSeleccionado);
             this.grpInscripcion.Controls.Add(this.lblPrecioMatri);
             this.grpInscripcion.Controls.Add(this.lblCantCuotas);
-            this.grpInscripcion.Controls.Add(this.btnQuitarPago);
             this.grpInscripcion.Controls.Add(this.label);
             this.grpInscripcion.Controls.Add(this.btnAgregarPago);
             this.grpInscripcion.Controls.Add(this.lblPrecioMensual);
@@ -206,12 +257,13 @@
             this.grpInscripcion.Controls.Add(this.lblDeporteSeleccionado);
             this.grpInscripcion.Controls.Add(this.lstCuotaDeuda);
             this.grpInscripcion.Controls.Add(this.lstCuotaAPagar);
+            this.grpInscripcion.Controls.Add(this.btnQuitarPago);
             this.grpInscripcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grpInscripcion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpInscripcion.ForeColor = System.Drawing.Color.White;
-            this.grpInscripcion.Location = new System.Drawing.Point(532, 146);
+            this.grpInscripcion.Location = new System.Drawing.Point(532, 111);
             this.grpInscripcion.Name = "grpInscripcion";
-            this.grpInscripcion.Size = new System.Drawing.Size(773, 367);
+            this.grpInscripcion.Size = new System.Drawing.Size(768, 402);
             this.grpInscripcion.TabIndex = 32;
             this.grpInscripcion.TabStop = false;
             this.grpInscripcion.Text = "Datos de la Inscripción";
@@ -311,6 +363,25 @@
             this.lblCantCuotas.TabIndex = 36;
             this.lblCantCuotas.Text = "Cantidad de cuotas:";
             // 
+            // btnQuitarPago
+            // 
+            this.btnQuitarPago.BackColor = System.Drawing.Color.DimGray;
+            this.btnQuitarPago.BackgroundImage = global::CDVU.Properties.Resources.icons8_ventana_abierta_64;
+            this.btnQuitarPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnQuitarPago.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQuitarPago.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnQuitarPago.FlatAppearance.BorderSize = 0;
+            this.btnQuitarPago.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnQuitarPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnQuitarPago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnQuitarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitarPago.Location = new System.Drawing.Point(395, 299);
+            this.btnQuitarPago.Name = "btnQuitarPago";
+            this.btnQuitarPago.Size = new System.Drawing.Size(63, 91);
+            this.btnQuitarPago.TabIndex = 33;
+            this.btnQuitarPago.UseVisualStyleBackColor = false;
+            this.btnQuitarPago.Click += new System.EventHandler(this.btnQuitarPago_Click);
+            // 
             // label
             // 
             this.label.AutoSize = true;
@@ -322,6 +393,25 @@
             this.label.Size = new System.Drawing.Size(79, 16);
             this.label.TabIndex = 19;
             this.label.Text = "Inscripción";
+            // 
+            // btnAgregarPago
+            // 
+            this.btnAgregarPago.BackColor = System.Drawing.Color.DimGray;
+            this.btnAgregarPago.BackgroundImage = global::CDVU.Properties.Resources.icons8_panel_cerrado_64;
+            this.btnAgregarPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAgregarPago.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarPago.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAgregarPago.FlatAppearance.BorderSize = 0;
+            this.btnAgregarPago.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnAgregarPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarPago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarPago.Location = new System.Drawing.Point(313, 234);
+            this.btnAgregarPago.Name = "btnAgregarPago";
+            this.btnAgregarPago.Size = new System.Drawing.Size(63, 91);
+            this.btnAgregarPago.TabIndex = 32;
+            this.btnAgregarPago.UseVisualStyleBackColor = false;
+            this.btnAgregarPago.Click += new System.EventHandler(this.btnAgregarPago_Click);
             // 
             // lblPrecioMensual
             // 
@@ -335,6 +425,18 @@
             this.lblPrecioMensual.TabIndex = 35;
             this.lblPrecioMensual.Text = "Precio mensual: $";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(60, 230);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(148, 16);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Cuotas que se deben";
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -347,6 +449,18 @@
             this.label13.TabIndex = 21;
             this.label13.Text = "Deporte:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(474, 230);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 16);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Cuotas a pagar";
+            // 
             // lblDeporteSeleccionado
             // 
             this.lblDeporteSeleccionado.AutoSize = true;
@@ -357,6 +471,38 @@
             this.lblDeporteSeleccionado.Name = "lblDeporteSeleccionado";
             this.lblDeporteSeleccionado.Size = new System.Drawing.Size(0, 18);
             this.lblDeporteSeleccionado.TabIndex = 22;
+            // 
+            // lstCuotaDeuda
+            // 
+            this.lstCuotaDeuda.BackColor = System.Drawing.Color.DimGray;
+            this.lstCuotaDeuda.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.lstCuotaDeuda.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstCuotaDeuda.ForeColor = System.Drawing.Color.White;
+            this.lstCuotaDeuda.FormattingEnabled = true;
+            this.lstCuotaDeuda.ItemHeight = 14;
+            this.lstCuotaDeuda.Location = new System.Drawing.Point(63, 256);
+            this.lstCuotaDeuda.Name = "lstCuotaDeuda";
+            this.lstCuotaDeuda.ScrollAlwaysVisible = true;
+            this.lstCuotaDeuda.Size = new System.Drawing.Size(231, 116);
+            this.lstCuotaDeuda.Sorted = true;
+            this.lstCuotaDeuda.TabIndex = 34;
+            this.lstCuotaDeuda.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstCuotaDeuda_DrawItem);
+            // 
+            // lstCuotaAPagar
+            // 
+            this.lstCuotaAPagar.BackColor = System.Drawing.Color.DimGray;
+            this.lstCuotaAPagar.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.lstCuotaAPagar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstCuotaAPagar.ForeColor = System.Drawing.Color.White;
+            this.lstCuotaAPagar.FormattingEnabled = true;
+            this.lstCuotaAPagar.ItemHeight = 14;
+            this.lstCuotaAPagar.Location = new System.Drawing.Point(477, 256);
+            this.lstCuotaAPagar.Name = "lstCuotaAPagar";
+            this.lstCuotaAPagar.ScrollAlwaysVisible = true;
+            this.lstCuotaAPagar.Size = new System.Drawing.Size(231, 116);
+            this.lstCuotaAPagar.Sorted = true;
+            this.lstCuotaAPagar.TabIndex = 34;
+            this.lstCuotaAPagar.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstCuotaAPagar_DrawItem);
             // 
             // grpSocio
             // 
@@ -377,9 +523,9 @@
             this.grpSocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grpSocio.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpSocio.ForeColor = System.Drawing.Color.White;
-            this.grpSocio.Location = new System.Drawing.Point(75, 146);
+            this.grpSocio.Location = new System.Drawing.Point(75, 111);
             this.grpSocio.Name = "grpSocio";
-            this.grpSocio.Size = new System.Drawing.Size(409, 367);
+            this.grpSocio.Size = new System.Drawing.Size(425, 402);
             this.grpSocio.TabIndex = 37;
             this.grpSocio.TabStop = false;
             this.grpSocio.Text = "Datos del socio";
@@ -389,7 +535,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(138, 238);
+            this.label3.Location = new System.Drawing.Point(138, 267);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(133, 18);
@@ -401,7 +547,7 @@
             this.lblNombreTutor.AutoSize = true;
             this.lblNombreTutor.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreTutor.ForeColor = System.Drawing.Color.White;
-            this.lblNombreTutor.Location = new System.Drawing.Point(61, 320);
+            this.lblNombreTutor.Location = new System.Drawing.Point(61, 349);
             this.lblNombreTutor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreTutor.Name = "lblNombreTutor";
             this.lblNombreTutor.Size = new System.Drawing.Size(56, 18);
@@ -413,7 +559,7 @@
             this.lblNombreTutorSeleccionado.AutoSize = true;
             this.lblNombreTutorSeleccionado.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreTutorSeleccionado.ForeColor = System.Drawing.Color.White;
-            this.lblNombreTutorSeleccionado.Location = new System.Drawing.Point(127, 320);
+            this.lblNombreTutorSeleccionado.Location = new System.Drawing.Point(127, 349);
             this.lblNombreTutorSeleccionado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreTutorSeleccionado.Name = "lblNombreTutorSeleccionado";
             this.lblNombreTutorSeleccionado.Size = new System.Drawing.Size(0, 18);
@@ -424,7 +570,7 @@
             this.lblDniTutor.AutoSize = true;
             this.lblDniTutor.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDniTutor.ForeColor = System.Drawing.Color.White;
-            this.lblDniTutor.Location = new System.Drawing.Point(71, 284);
+            this.lblDniTutor.Location = new System.Drawing.Point(71, 313);
             this.lblDniTutor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDniTutor.Name = "lblDniTutor";
             this.lblDniTutor.Size = new System.Drawing.Size(46, 18);
@@ -436,7 +582,7 @@
             this.lblDniTutorSeleccionado.AutoSize = true;
             this.lblDniTutorSeleccionado.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDniTutorSeleccionado.ForeColor = System.Drawing.Color.White;
-            this.lblDniTutorSeleccionado.Location = new System.Drawing.Point(127, 284);
+            this.lblDniTutorSeleccionado.Location = new System.Drawing.Point(127, 313);
             this.lblDniTutorSeleccionado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDniTutorSeleccionado.Name = "lblDniTutorSeleccionado";
             this.lblDniTutorSeleccionado.Size = new System.Drawing.Size(0, 18);
@@ -447,7 +593,7 @@
             this.lblNombreSocio.AutoSize = true;
             this.lblNombreSocio.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreSocio.ForeColor = System.Drawing.Color.White;
-            this.lblNombreSocio.Location = new System.Drawing.Point(59, 197);
+            this.lblNombreSocio.Location = new System.Drawing.Point(59, 226);
             this.lblNombreSocio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreSocio.Name = "lblNombreSocio";
             this.lblNombreSocio.Size = new System.Drawing.Size(58, 18);
@@ -459,7 +605,7 @@
             this.lblNombreSocioSeleccionado.AutoSize = true;
             this.lblNombreSocioSeleccionado.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreSocioSeleccionado.ForeColor = System.Drawing.Color.White;
-            this.lblNombreSocioSeleccionado.Location = new System.Drawing.Point(129, 197);
+            this.lblNombreSocioSeleccionado.Location = new System.Drawing.Point(129, 226);
             this.lblNombreSocioSeleccionado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreSocioSeleccionado.Name = "lblNombreSocioSeleccionado";
             this.lblNombreSocioSeleccionado.Size = new System.Drawing.Size(0, 18);
@@ -470,7 +616,7 @@
             this.btnBuscarSocio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
             this.btnBuscarSocio.FlatAppearance.BorderSize = 0;
             this.btnBuscarSocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarSocio.Location = new System.Drawing.Point(234, 69);
+            this.btnBuscarSocio.Location = new System.Drawing.Point(271, 69);
             this.btnBuscarSocio.Name = "btnBuscarSocio";
             this.btnBuscarSocio.Size = new System.Drawing.Size(88, 27);
             this.btnBuscarSocio.TabIndex = 24;
@@ -484,10 +630,10 @@
             this.txtBuscarSocio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscarSocio.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBuscarSocio.ForeColor = System.Drawing.Color.White;
-            this.txtBuscarSocio.Location = new System.Drawing.Point(88, 69);
+            this.txtBuscarSocio.Location = new System.Drawing.Point(64, 69);
             this.txtBuscarSocio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtBuscarSocio.Name = "txtBuscarSocio";
-            this.txtBuscarSocio.Size = new System.Drawing.Size(139, 27);
+            this.txtBuscarSocio.Size = new System.Drawing.Size(200, 27);
             this.txtBuscarSocio.TabIndex = 23;
             // 
             // label4
@@ -495,7 +641,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(85, 41);
+            this.label4.Location = new System.Drawing.Point(93, 41);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(239, 16);
@@ -507,7 +653,7 @@
             this.lblIdSocio.AutoSize = true;
             this.lblIdSocio.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdSocio.ForeColor = System.Drawing.Color.White;
-            this.lblIdSocio.Location = new System.Drawing.Point(32, 125);
+            this.lblIdSocio.Location = new System.Drawing.Point(32, 154);
             this.lblIdSocio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIdSocio.Name = "lblIdSocio";
             this.lblIdSocio.Size = new System.Drawing.Size(85, 18);
@@ -519,7 +665,7 @@
             this.lblDniSocio.AutoSize = true;
             this.lblDniSocio.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDniSocio.ForeColor = System.Drawing.Color.White;
-            this.lblDniSocio.Location = new System.Drawing.Point(71, 161);
+            this.lblDniSocio.Location = new System.Drawing.Point(71, 190);
             this.lblDniSocio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDniSocio.Name = "lblDniSocio";
             this.lblDniSocio.Size = new System.Drawing.Size(46, 18);
@@ -531,7 +677,7 @@
             this.lblIdSocioSeleccionado.AutoSize = true;
             this.lblIdSocioSeleccionado.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdSocioSeleccionado.ForeColor = System.Drawing.Color.White;
-            this.lblIdSocioSeleccionado.Location = new System.Drawing.Point(129, 125);
+            this.lblIdSocioSeleccionado.Location = new System.Drawing.Point(129, 154);
             this.lblIdSocioSeleccionado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIdSocioSeleccionado.Name = "lblIdSocioSeleccionado";
             this.lblIdSocioSeleccionado.Size = new System.Drawing.Size(0, 18);
@@ -542,155 +688,11 @@
             this.lblDniSocioSeleccionado.AutoSize = true;
             this.lblDniSocioSeleccionado.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDniSocioSeleccionado.ForeColor = System.Drawing.Color.White;
-            this.lblDniSocioSeleccionado.Location = new System.Drawing.Point(129, 161);
+            this.lblDniSocioSeleccionado.Location = new System.Drawing.Point(129, 190);
             this.lblDniSocioSeleccionado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDniSocioSeleccionado.Name = "lblDniSocioSeleccionado";
             this.lblDniSocioSeleccionado.Size = new System.Drawing.Size(0, 18);
             this.lblDniSocioSeleccionado.TabIndex = 22;
-            // 
-            // btnQuitarPago
-            // 
-            this.btnQuitarPago.BackColor = System.Drawing.Color.DimGray;
-            this.btnQuitarPago.BackgroundImage = global::CDVU.Properties.Resources.icons8_ventana_abierta_64;
-            this.btnQuitarPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnQuitarPago.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuitarPago.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnQuitarPago.FlatAppearance.BorderSize = 0;
-            this.btnQuitarPago.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnQuitarPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnQuitarPago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnQuitarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuitarPago.Location = new System.Drawing.Point(358, 286);
-            this.btnQuitarPago.Name = "btnQuitarPago";
-            this.btnQuitarPago.Size = new System.Drawing.Size(59, 50);
-            this.btnQuitarPago.TabIndex = 33;
-            this.btnQuitarPago.UseVisualStyleBackColor = false;
-            this.btnQuitarPago.Click += new System.EventHandler(this.btnQuitarPago_Click);
-            // 
-            // btnAgregarPago
-            // 
-            this.btnAgregarPago.BackColor = System.Drawing.Color.DimGray;
-            this.btnAgregarPago.BackgroundImage = global::CDVU.Properties.Resources.icons8_panel_cerrado_64;
-            this.btnAgregarPago.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAgregarPago.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarPago.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAgregarPago.FlatAppearance.BorderSize = 0;
-            this.btnAgregarPago.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnAgregarPago.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAgregarPago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnAgregarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarPago.Location = new System.Drawing.Point(358, 234);
-            this.btnAgregarPago.Name = "btnAgregarPago";
-            this.btnAgregarPago.Size = new System.Drawing.Size(59, 50);
-            this.btnAgregarPago.TabIndex = 32;
-            this.btnAgregarPago.UseVisualStyleBackColor = false;
-            this.btnAgregarPago.Click += new System.EventHandler(this.btnAgregarPago_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(83, 215);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 16);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Cuotas que se deben";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(455, 215);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 16);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Cuotas a pagar";
-            // 
-            // lstCuotaDeuda
-            // 
-            this.lstCuotaDeuda.BackColor = System.Drawing.Color.DimGray;
-            this.lstCuotaDeuda.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.lstCuotaDeuda.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstCuotaDeuda.ForeColor = System.Drawing.Color.White;
-            this.lstCuotaDeuda.FormattingEnabled = true;
-            this.lstCuotaDeuda.ItemHeight = 14;
-            this.lstCuotaDeuda.Location = new System.Drawing.Point(86, 234);
-            this.lstCuotaDeuda.Name = "lstCuotaDeuda";
-            this.lstCuotaDeuda.ScrollAlwaysVisible = true;
-            this.lstCuotaDeuda.Size = new System.Drawing.Size(231, 102);
-            this.lstCuotaDeuda.TabIndex = 34;
-            this.lstCuotaDeuda.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstCuotaDeuda_DrawItem);
-            // 
-            // lstCuotaAPagar
-            // 
-            this.lstCuotaAPagar.BackColor = System.Drawing.Color.DimGray;
-            this.lstCuotaAPagar.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.lstCuotaAPagar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstCuotaAPagar.ForeColor = System.Drawing.Color.White;
-            this.lstCuotaAPagar.FormattingEnabled = true;
-            this.lstCuotaAPagar.ItemHeight = 14;
-            this.lstCuotaAPagar.Location = new System.Drawing.Point(458, 234);
-            this.lstCuotaAPagar.Name = "lstCuotaAPagar";
-            this.lstCuotaAPagar.ScrollAlwaysVisible = true;
-            this.lstCuotaAPagar.Size = new System.Drawing.Size(231, 102);
-            this.lstCuotaAPagar.TabIndex = 34;
-            this.lstCuotaAPagar.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstCuotaAPagar_DrawItem);
-            // 
-            // lblControle
-            // 
-            this.lblControle.AutoSize = true;
-            this.lblControle.Font = new System.Drawing.Font("Verdana", 10F);
-            this.lblControle.ForeColor = System.Drawing.Color.White;
-            this.lblControle.Location = new System.Drawing.Point(56, 162);
-            this.lblControle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblControle.Name = "lblControle";
-            this.lblControle.Size = new System.Drawing.Size(453, 17);
-            this.lblControle.TabIndex = 44;
-            this.lblControle.Text = "Por favor controle los datos antes de dar por finalizado el pago";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.DimGray;
-            this.btnCancelar.BackgroundImage = global::CDVU.Properties.Resources.icons8_no_molestar_64;
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(294, 193);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(69, 70);
-            this.btnCancelar.TabIndex = 43;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            this.btnCancelar.MouseHover += new System.EventHandler(this.btnCancelar_MouseHover);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.BackColor = System.Drawing.Color.DimGray;
-            this.btnAceptar.BackgroundImage = global::CDVU.Properties.Resources.icons8_aprobación_64;
-            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Location = new System.Drawing.Point(199, 193);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(69, 70);
-            this.btnAceptar.TabIndex = 42;
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            this.btnAceptar.MouseHover += new System.EventHandler(this.btnAceptar_MouseHover);
             // 
             // frmTesoreria
             // 

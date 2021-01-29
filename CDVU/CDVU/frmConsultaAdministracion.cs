@@ -10,6 +10,7 @@ namespace CDVU
         {
             InitializeComponent();
         }
+
         private void abrirForm(Form formHija)
         {
             if (pnlContenedor.Controls.Count > 0)
@@ -21,14 +22,14 @@ namespace CDVU
             formHija.Show();
         }
 
-        private void btnSocio_Click(object sender, EventArgs e)
-        {
-            abrirForm(new frmConsultaSocio());
-        }
-
         private void btnTesoreria_Click(object sender, EventArgs e)
         {
             abrirForm(new frmConsultaTesoreria());
+        }
+
+        private void btnRecaudacion_Click(object sender, EventArgs e)
+        {
+            abrirForm(new frmConsultaRecaudacion());
         }
     }
 }

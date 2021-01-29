@@ -708,6 +708,47 @@ namespace CDVU
                 return true;
         }
 
+        private bool validarFechas()
+        {
+            if (dtpHoraEntradaLunes.Value > dtpHoraSalidaLunes.Value)
+            {
+                MessageBox.Show("El horario de entrada del día Lunes no puede ser mayor al de salida", "Lunes", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return false;
+            }
+            if (dtpHoraEntradaMartes.Value > dtpHoraSalidaMartes.Value)
+            {
+                MessageBox.Show("El horario de entrada del día Martes no puede ser mayor al de salida", "Martes", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return false;
+            }
+            if (dtpHoraEntradaMiercoles.Value > dtpHoraSalidaMiercoles.Value)
+            {
+                MessageBox.Show("El horario de entrada del día Miércoles no puede ser mayor al de salida", "Miércoles", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return false;
+            }
+            if (dtpHoraEntradaJueves.Value > dtpHoraSalidaJueves.Value)
+            {
+                MessageBox.Show("El horario de entrada del día Jueves no puede ser mayor al de salida", "Jueves", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return false;
+            }
+            if (dtpHoraEntradaViernes.Value > dtpHoraSalidaViernes.Value)
+            {
+                MessageBox.Show("El horario de entrada del día Viernes no puede ser mayor al de salida", "Viernes", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return false;
+            }
+            if (dtpHoraEntradaSabado.Value > dtpHoraSalidaSabado.Value)
+            {
+                MessageBox.Show("El horario de entrada del día Sábado no puede ser mayor al de salida", "Sábado", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return false;
+            }
+            if (dtpHoraEntradaDomingo.Value > dtpHoraSalidaDomingo.Value)
+            {
+                MessageBox.Show("El horario de entrada del día Domingo no puede ser mayor al de salida", "Domingo", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return false;
+            }
+            else
+                return true;
+        }
+
         private bool validarSeleccionLista()
         {
             if (lstEntrenamiento.SelectedIndex == -1)
@@ -752,7 +793,7 @@ namespace CDVU
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (validarVacios() && MessageBox.Show("¿Guardar cambios?", "Guardando", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (validarFechas() && validarVacios() && MessageBox.Show("¿Guardar cambios?", "Guardando", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 abmTurnoEntrenamiento(miAccion);
                 limpiarCampos();

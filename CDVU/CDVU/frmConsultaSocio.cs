@@ -45,10 +45,9 @@ namespace CDVU
         private void cargarComboInscripcion(int idSocio)
         {
             cmbInscripcion.Update();
-            cmbInscripcion.DataSource = gi.listaInscripcionSegunIdSocio(idSocio);
+            cmbInscripcion.DataSource = gi.listaInscripcionCompletaSegunIdSocio(idSocio);
             cmbInscripcion.ValueMember = "id";
             cmbInscripcion.DisplayMember = "";
-            cmbInscripcion.SelectedIndex = -1;
         }
 
         private void lstSocios_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,13 +100,6 @@ namespace CDVU
                 }
                 e.DrawFocusRectangle();
             }
-        }
-
-        private void limpiarCampos()
-        {
-            txtBuscarSocio.Text = "";
-            cmbInscripcion.DataSource = null;
-            cmbInscripcion.Items.Clear();
         }
 
         private void btnBuscarSocio_KeyPress(object sender, KeyPressEventArgs e)
@@ -168,20 +160,18 @@ namespace CDVU
                 Inscripcion inscripcion = (Inscripcion)cmbInscripcion.SelectedItem;
                 string consulta = "select e.cantidadCuotas - COUNT(p.id) 'Cantidad de cuotas que debe el socio (No incluye la matrícula)' from Pago p right join Inscripcion i on p.inscripcion = i.id join Entrenamiento e on e.id = i.entrenamiento where i.id = " + inscripcion.Id + " and i.socio = " + inscripcion.Socio.Id + " group by e.cantidadCuotas";
                 dgvResultado.DataSource = bd.buscarBD(consulta);
-                limpiarCampos();
+                txtBuscarSocio.Text = "";
             }
         }
 
         private void btnInscripcionesPagadas_Click(object sender, EventArgs e)
         {
-            if (lstSocios.SelectedIndex == -1)
-                MessageBox.Show("Debe seleccionar un socio de la lista para continuar", "Seleccione un socio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-            else
+            if (validarSeleccionLista())
             {
                 socio = (Socio)lstSocios.SelectedItem;
                 string consulta = "select i.id 'N° de Inscripción', i.fecha 'Fecha de inscripción', nombreDeporte Deporte, descripcion Predio from vw_listaEntrenamiento e join Inscripcion i on i.entrenamiento = e.idEntrenamiento where estaSaldado = 1 and i.socio = " + socio.Id;
                 dgvResultado.DataSource = bd.buscarBD(consulta);
-                limpiarCampos();
+                txtBuscarSocio.Text = "";
             }
         }
     }

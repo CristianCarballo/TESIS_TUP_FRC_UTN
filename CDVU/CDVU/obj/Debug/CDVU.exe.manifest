@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDVU.exe" size="483784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CDVU.exe" size="495560">
       <assemblyIdentity name="CDVU" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3A8LSPFIm8/gvcWV4OH+7klQMiPgqYpEq5ryrPRZ6pU=</dsig:DigestValue>
+        <dsig:DigestValue>89Y8IbE7Rvj96kmQ9H6FzX+vSYdT/KNWG0mtHcU21Dg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

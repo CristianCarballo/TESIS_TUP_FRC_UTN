@@ -70,6 +70,59 @@ namespace CDVU.Clases.Base_de_Datos.GestorClub
             return recibo;
         }
 
+        public Recibo obtenerReciboPorId(Recibo r)
+        {
+            Recibo recibo = new Recibo();
+            bd.consultarBD("select r.id idRecibo, ls.id idSocio, nombre, apellido, idSexoSocio, sexoSocio, dni, domicilio, idLocalidad, nombreLocalidad, idProvincia, nombreProvincia, telefono, email, fechaNacimiento, idNacionalidad, nombrePais, idTutor, nombreTutor, apellidoTutor, idSexoTutor, sexoTutor, dniTutor, domicilioTutor, idLocalidadTutor, telefonoTutor, emailTutor, fechaNacimientoTutot, idNacionalidadTutor, fecha, montoTotal from Recibo r join vw_listaSocios ls on r.socio = ls.id where r.id = " + r.Id);
+            if (bd.Lector.Read())
+            {
+                if (!bd.Lector.IsDBNull(0))
+                    recibo.Id = bd.Lector.GetInt32(0);
+
+                Socio socio = new Socio();
+                if (!bd.Lector.IsDBNull(1))
+                    socio.Id = bd.Lector.GetInt32(1);
+                if (!bd.Lector.IsDBNull(2))
+                    socio.Nombre = bd.Lector.GetString(2);
+                if (!bd.Lector.IsDBNull(3))
+                    socio.Apellido = bd.Lector.GetString(3);
+                if (!bd.Lector.IsDBNull(4))
+                    socio.IdSexo = bd.Lector.GetInt32(4);
+                if (!bd.Lector.IsDBNull(5))
+                    socio.Sexo = bd.Lector.GetString(5);
+                if (!bd.Lector.IsDBNull(6))
+                    socio.Dni = bd.Lector.GetString(6);
+                if (!bd.Lector.IsDBNull(7))
+                    socio.Domicilio = bd.Lector.GetString(7);
+                if (!bd.Lector.IsDBNull(8))
+                    socio.Localidad = new Localidad(bd.Lector.GetInt32(8), bd.Lector.GetString(9), new Provincia(bd.Lector.GetInt32(10), bd.Lector.GetString(11)));
+                if (!bd.Lector.IsDBNull(12))
+                    socio.Telefono = bd.Lector.GetString(12);
+                if (!bd.Lector.IsDBNull(13))
+                    socio.Email = bd.Lector.GetString(13);
+                if (!bd.Lector.IsDBNull(14))
+                    socio.FechaNacimiento = bd.Lector.GetDateTime(14);
+                if (!bd.Lector.IsDBNull(15))
+                    socio.Nacionalidad = new Pais(bd.Lector.GetInt32(15), bd.Lector.GetString(16));
+                if (!bd.Lector.IsDBNull(17))
+                    socio.Tutor = new Tutor(bd.Lector.GetInt32(17), bd.Lector.GetString(18), bd.Lector.GetString(19), bd.Lector.GetInt32(20), bd.Lector.GetString(21), bd.Lector.GetString(22), bd.Lector.GetString(23), new Localidad(bd.Lector.GetInt32(24), bd.Lector.GetString(9), new Provincia(bd.Lector.GetInt32(10), bd.Lector.GetString(11))), bd.Lector.GetString(25), bd.Lector.GetString(26), bd.Lector.GetDateTime(27), new Pais(bd.Lector.GetInt32(28), bd.Lector.GetString(16)));
+                else
+                    socio.Tutor = null;
+
+                recibo.Socio = socio;
+
+                if (!bd.Lector.IsDBNull(29))
+                    recibo.Fecha = bd.Lector.GetDateTime(29);
+                if (!bd.Lector.IsDBNull(30))
+                    recibo.MontoTotal = bd.Lector.GetDouble(30);
+            }
+            else
+                recibo = null;
+            bd.Lector.Close();
+            bd.desconectar();
+            return recibo;
+        }
+
         public List<Recibo> listaReciboSegunIdSocio(int idSocio)
         {
             List<Recibo> lista = new List<Recibo>();

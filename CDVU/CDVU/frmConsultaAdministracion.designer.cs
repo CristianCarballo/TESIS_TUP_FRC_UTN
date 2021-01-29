@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRecaudacion = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlContenedor.SuspendLayout();
             this.SuspendLayout();
@@ -41,6 +43,8 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.Black;
+            this.pnlMenu.Controls.Add(this.panel1);
+            this.pnlMenu.Controls.Add(this.btnRecaudacion);
             this.pnlMenu.Controls.Add(this.panel2);
             this.pnlMenu.Controls.Add(this.btnTesoreria);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -52,7 +56,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
-            this.panel2.Location = new System.Drawing.Point(0, 421);
+            this.panel2.Location = new System.Drawing.Point(0, 404);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(10, 21);
             this.panel2.TabIndex = 6;
@@ -66,7 +70,7 @@
             this.btnTesoreria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTesoreria.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTesoreria.ForeColor = System.Drawing.Color.White;
-            this.btnTesoreria.Location = new System.Drawing.Point(3, 421);
+            this.btnTesoreria.Location = new System.Drawing.Point(3, 404);
             this.btnTesoreria.Name = "btnTesoreria";
             this.btnTesoreria.Size = new System.Drawing.Size(217, 21);
             this.btnTesoreria.TabIndex = 7;
@@ -109,6 +113,31 @@
             this.lblTitulo.TabIndex = 41;
             this.lblTitulo.Text = "CONSULTAS";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
+            this.panel1.Location = new System.Drawing.Point(0, 431);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 21);
+            this.panel1.TabIndex = 8;
+            // 
+            // btnRecaudacion
+            // 
+            this.btnRecaudacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecaudacion.FlatAppearance.BorderSize = 0;
+            this.btnRecaudacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
+            this.btnRecaudacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
+            this.btnRecaudacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecaudacion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecaudacion.ForeColor = System.Drawing.Color.White;
+            this.btnRecaudacion.Location = new System.Drawing.Point(3, 431);
+            this.btnRecaudacion.Name = "btnRecaudacion";
+            this.btnRecaudacion.Size = new System.Drawing.Size(217, 21);
+            this.btnRecaudacion.TabIndex = 9;
+            this.btnRecaudacion.Text = "RECAUDACION";
+            this.btnRecaudacion.UseVisualStyleBackColor = true;
+            this.btnRecaudacion.Click += new System.EventHandler(this.btnRecaudacion_Click);
+            // 
             // frmConsultaAdministracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
@@ -136,5 +165,7 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnTesoreria;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnRecaudacion;
     }
 }
