@@ -59,7 +59,10 @@ namespace CDVU
                 cmbInscripcion.Items.Clear();
             }
             else
-            cargarComboInscripcion(socio.Id);
+            {
+                cargarComboInscripcion(socio.Id);
+                dgvResultado.DataSource = null;
+            }
         }
 
         // ************************ VALIDACIONES ************************
@@ -166,7 +169,9 @@ namespace CDVU
 
         private void btnInscripcionesPagadas_Click(object sender, EventArgs e)
         {
-            if (validarSeleccionLista())
+            if (lstSocios.SelectedIndex == -1)
+                MessageBox.Show("Debe seleccionar un socio de la lista para continuar", "Seleccione un socio", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else
             {
                 socio = (Socio)lstSocios.SelectedItem;
                 string consulta = "select i.id 'N° de Inscripción', i.fecha 'Fecha de inscripción', nombreDeporte Deporte, descripcion Predio from vw_listaEntrenamiento e join Inscripcion i on i.entrenamiento = e.idEntrenamiento where estaSaldado = 1 and i.socio = " + socio.Id;

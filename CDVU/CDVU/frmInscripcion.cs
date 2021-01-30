@@ -115,19 +115,19 @@ namespace CDVU
             foreach (Turno t in ge.listaTurnoSegunIdEntrenamiento(entrenamiento.Id))
             {
                 if (t.IdDia == 1)
-                    lblLunes.Text = " de " + t.HoraEntrada.TimeOfDay.ToString() + " hs. a " + t.HoraEntrada.TimeOfDay.ToString() + " hs.";
+                    lblLunes.Text = " de " + t.HoraEntrada.TimeOfDay.ToString() + " hs. a " + t.HoraSalida.TimeOfDay.ToString() + " hs.";
                 if (t.IdDia == 2)
-                    lblMartes.Text = " de " + t.HoraEntrada.TimeOfDay.ToString() + " hs. a " + t.HoraEntrada.TimeOfDay.ToString() + " hs.";
+                    lblMartes.Text = " de " + t.HoraEntrada.TimeOfDay.ToString() + " hs. a " + t.HoraSalida.TimeOfDay.ToString() + " hs.";
                 if (t.IdDia == 3)
-                    lblMiercoles.Text = " de " + t.HoraEntrada.TimeOfDay.ToString() + " hs. a " + t.HoraEntrada.TimeOfDay.ToString() + " hs.";
+                    lblMiercoles.Text = " de " + t.HoraEntrada.TimeOfDay.ToString() + " hs. a " + t.HoraSalida.TimeOfDay.ToString() + " hs.";
                 if (t.IdDia == 4)
-                    lblJueves.Text = " de " + t.HoraEntrada.TimeOfDay.ToString() + " hs. a " + t.HoraEntrada.TimeOfDay.ToString() + " hs.";
+                    lblJueves.Text = " de " + t.HoraEntrada.TimeOfDay.ToString() + " hs. a " + t.HoraSalida.TimeOfDay.ToString() + " hs.";
                 if (t.IdDia == 5)
-                    lblViernes.Text = " de " + t.HoraEntrada.TimeOfDay.ToString() + " hs. a " + t.HoraEntrada.TimeOfDay.ToString() + " hs.";
+                    lblViernes.Text = " de " + t.HoraEntrada.TimeOfDay.ToString() + " hs. a " + t.HoraSalida.TimeOfDay.ToString() + " hs.";
                 if (t.IdDia == 6)
-                    lblSabado.Text = " de " + t.HoraEntrada.TimeOfDay.ToString() + " hs. a " + t.HoraEntrada.TimeOfDay.ToString() + " hs.";
+                    lblSabado.Text = " de " + t.HoraEntrada.TimeOfDay.ToString() + " hs. a " + t.HoraSalida.TimeOfDay.ToString() + " hs.";
                 if (t.IdDia == 7)
-                    lblDomingo.Text = " de " + t.HoraEntrada.TimeOfDay.ToString() + " hs. a " + t.HoraEntrada.TimeOfDay.ToString() + " hs.";
+                    lblDomingo.Text = " de " + t.HoraEntrada.TimeOfDay.ToString() + " hs. a " + t.HoraSalida.TimeOfDay.ToString() + " hs.";
             }
 
             lblPrecioMensualSeleccionado.Text = entrenamiento.PrecioMensual.ToString();
