@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRecaudacion = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnTesoreria = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRecaudacion = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlContenedor.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +52,31 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(220, 862);
             this.pnlMenu.TabIndex = 37;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
+            this.panel1.Location = new System.Drawing.Point(0, 431);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 21);
+            this.panel1.TabIndex = 8;
+            // 
+            // btnRecaudacion
+            // 
+            this.btnRecaudacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecaudacion.FlatAppearance.BorderSize = 0;
+            this.btnRecaudacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
+            this.btnRecaudacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
+            this.btnRecaudacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecaudacion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecaudacion.ForeColor = System.Drawing.Color.White;
+            this.btnRecaudacion.Location = new System.Drawing.Point(3, 431);
+            this.btnRecaudacion.Name = "btnRecaudacion";
+            this.btnRecaudacion.Size = new System.Drawing.Size(217, 21);
+            this.btnRecaudacion.TabIndex = 9;
+            this.btnRecaudacion.Text = "RECAUDACIÓN";
+            this.btnRecaudacion.UseVisualStyleBackColor = true;
+            this.btnRecaudacion.Click += new System.EventHandler(this.btnRecaudacion_Click);
             // 
             // panel2
             // 
@@ -74,7 +99,7 @@
             this.btnTesoreria.Name = "btnTesoreria";
             this.btnTesoreria.Size = new System.Drawing.Size(217, 21);
             this.btnTesoreria.TabIndex = 7;
-            this.btnTesoreria.Text = "TESORERIA";
+            this.btnTesoreria.Text = "TESORERÍA";
             this.btnTesoreria.UseVisualStyleBackColor = true;
             this.btnTesoreria.Click += new System.EventHandler(this.btnTesoreria_Click);
             // 
@@ -112,31 +137,6 @@
             this.lblTitulo.Size = new System.Drawing.Size(407, 77);
             this.lblTitulo.TabIndex = 41;
             this.lblTitulo.Text = "CONSULTAS";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
-            this.panel1.Location = new System.Drawing.Point(0, 431);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 21);
-            this.panel1.TabIndex = 8;
-            // 
-            // btnRecaudacion
-            // 
-            this.btnRecaudacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecaudacion.FlatAppearance.BorderSize = 0;
-            this.btnRecaudacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
-            this.btnRecaudacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
-            this.btnRecaudacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecaudacion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecaudacion.ForeColor = System.Drawing.Color.White;
-            this.btnRecaudacion.Location = new System.Drawing.Point(3, 431);
-            this.btnRecaudacion.Name = "btnRecaudacion";
-            this.btnRecaudacion.Size = new System.Drawing.Size(217, 21);
-            this.btnRecaudacion.TabIndex = 9;
-            this.btnRecaudacion.Text = "RECAUDACION";
-            this.btnRecaudacion.UseVisualStyleBackColor = true;
-            this.btnRecaudacion.Click += new System.EventHandler(this.btnRecaudacion_Click);
             // 
             // frmConsultaAdministracion
             // 

@@ -35,6 +35,8 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnConsulta = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -49,8 +51,6 @@
             this.pbxEscudo = new System.Windows.Forms.PictureBox();
             this.btnSocio = new System.Windows.Forms.Button();
             this.pnlContenedor = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnConsulta = new System.Windows.Forms.Button();
             this.pnlBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -162,6 +162,31 @@
             this.pnlMenu.Size = new System.Drawing.Size(220, 862);
             this.pnlMenu.TabIndex = 9;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
+            this.panel3.Location = new System.Drawing.Point(0, 350);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(10, 32);
+            this.panel3.TabIndex = 20;
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsulta.FlatAppearance.BorderSize = 0;
+            this.btnConsulta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
+            this.btnConsulta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
+            this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsulta.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulta.ForeColor = System.Drawing.Color.White;
+            this.btnConsulta.Location = new System.Drawing.Point(3, 350);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(217, 32);
+            this.btnConsulta.TabIndex = 21;
+            this.btnConsulta.Text = "CONSULTAS";
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
+            // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
@@ -233,7 +258,7 @@
             this.btnTesoreria.Name = "btnTesoreria";
             this.btnTesoreria.Size = new System.Drawing.Size(217, 32);
             this.btnTesoreria.TabIndex = 15;
-            this.btnTesoreria.Text = "TESORERIA";
+            this.btnTesoreria.Text = "TESORERÍA";
             this.btnTesoreria.UseVisualStyleBackColor = true;
             this.btnTesoreria.Click += new System.EventHandler(this.btnTesoreria_Click);
             // 
@@ -332,31 +357,6 @@
             this.pnlContenedor.Name = "pnlContenedor";
             this.pnlContenedor.Size = new System.Drawing.Size(1380, 862);
             this.pnlContenedor.TabIndex = 10;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
-            this.panel3.Location = new System.Drawing.Point(0, 350);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 32);
-            this.panel3.TabIndex = 20;
-            // 
-            // btnConsulta
-            // 
-            this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsulta.FlatAppearance.BorderSize = 0;
-            this.btnConsulta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
-            this.btnConsulta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(129)))), ((int)(((byte)(5)))));
-            this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsulta.ForeColor = System.Drawing.Color.White;
-            this.btnConsulta.Location = new System.Drawing.Point(3, 350);
-            this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(217, 32);
-            this.btnConsulta.TabIndex = 21;
-            this.btnConsulta.Text = "CONSULTAS";
-            this.btnConsulta.UseVisualStyleBackColor = true;
-            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // frmVentanaRecepcion
             // 
