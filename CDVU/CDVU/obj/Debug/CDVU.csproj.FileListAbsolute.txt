@@ -82,3 +82,5 @@ D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.exe.manifest
 D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.application
 D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmConsultaInscripcion.resources
 D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.frmConsultaRecaudacion.resources
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.csproj.AssemblyReference.cache
+D:\Almacenamiento\Github\TESIS_TUP_FRC_UTN\CDVU\CDVU\obj\Debug\CDVU.csproj.SuggestedBindingRedirects.cache
